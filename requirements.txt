@@ -1,5 +1,5 @@
-mkdocs-glightbox
+mkdocs-glightbox==0.5.2
+selectolax<1.0
 mkdocs-material
 mkdocs-material-extensions
 mkdocs-rss-plugin
-
