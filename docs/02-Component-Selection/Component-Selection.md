@@ -14,9 +14,9 @@ The H-bridge converts microcontroller control signals into power for the DC moto
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: Cytron MD13S**<br>![Cytron MD13S motor driver](images/md13s.jpg)<br>Estimated cost: $15.30 | • MOSFET-based switching.<br>• Bidirectional motor control.<br>• Simplifies wiring. | • Higher cost than a basic driver IC.<br>• Requires enclosure space.<br>• Stall-current compatibility must be verified. |
-| **Option 2: L298N H-Bridge**<br>![L298N H-bridge module](images/l298n.jpg)<br>Estimated cost: $3.15 | • Low cost.<br>• Widely documented.<br>• Supports two motor channels. | • Significant voltage drop.<br>• More heat.<br>• Lower efficiency. |
-| **Option 3: Discrete MOSFET H-Bridge**<br>![MOSFET transistor](images/mosfet.jpg)<br>Estimated cost: $4.20 | • Customizable design.<br>• Potentially low conduction losses.<br>• Flexible PCB layout. | • More complex design.<br>• Shoot-through risk.<br>• More testing required. |
+| **Option 1: Cytron MD13S**<br>![Cytron MD13S motor driver](image1.png)<br>Estimated cost: $15.30<br>[Official Product Page](https://cytron.io) | • MOSFET-based switching.<br>• Bidirectional motor control.<br>• Simplifies wiring. | • Higher cost than a basic driver IC.<br>• Requires enclosure space.<br>• Stall-current compatibility must be verified. |
+| **Option 2: L298N H-Bridge**<br>![L298N H-bridge module](image3.png)<br>Estimated cost: $3.15<br>[Product Reference](https://digikey.com) | • Low cost.<br>• Widely documented.<br>• Supports two motor channels. | • Significant voltage drop.<br>• More heat.<br>• Lower efficiency. |
+| **Option 3: Discrete MOSFET H-Bridge**<br>Estimated cost: $4.20<br>[Circuit Reference](https://electronics-tutorials.ws) | • Customizable design.<br>• Potentially low conduction losses.<br>• Flexible PCB layout. | • More complex design.<br>• Shoot-through risk.<br>• More testing required. |
 
 ### Final Selection: Cytron MD13S
 
@@ -30,9 +30,9 @@ The current sensor monitors the motor's power consumption to detect mechanical s
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: ACS712 Hall-Effect Sensor**<br>Estimated cost: $4.50 | • Galvanic isolation protects MCU.<br>• Low internal resistance.<br>• Simple analog voltage output. | • Susceptible to stray magnetic fields.<br>• High zero-current offset drift.<br>• Lower resolution at very small currents. |
-| **Option 2: INA219 High-Side Shunt Monitor**<br>Estimated cost: $5.20 | • High accuracy via I2C digital output.<br>• Measures both current and bus voltage.<br>• Programmable calibration. | • Lacks galvanic isolation.<br>• Requires software overhead for I2C communication.<br>• Solder pads are small for basic prototyping. |
-| **Option 3: Discrete Shunt Resistor & Op-Amp (TLV9002)**<br>Estimated cost: $0.83 (Op-Amp only) | • Extremely cost-effective.<br>• Highly customizable amplification gain.<br>• Minimal PCB footprint. | • High design complexity.<br>• Noise amplification issues.<br>• Requires precise component matching. |
+| **Option 1: ACS712 Hall-Effect Sensor**<br>Estimated cost: $4.50<br>[Product Reference](https://allegromicro.com) | • Galvanic isolation protects MCU.<br>• Low internal resistance.<br>• Simple analog voltage output. | • Susceptible to stray magnetic fields.<br>• High zero-current offset drift.<br>• Lower resolution at very small currents. |
+| **Option 2: INA219 High-Side Shunt Monitor**<br>Estimated cost: $5.20<br>[Product Reference](https://ti.com) | • High accuracy via I2C digital output.<br>• Measures both current and bus voltage.<br>• Programmable calibration. | • Lacks galvanic isolation.<br>• Requires software overhead for I2C communication.<br>• Solder pads are small for basic prototyping. |
+| **Option 3: Discrete Shunt Resistor & Op-Amp (TLV9002)**<br>Estimated cost: $0.83 (Op-Amp only)<br>[Datasheet Reference](https://ti.com) | • Extremely cost-effective.<br>• Highly customizable amplification gain.<br>• Minimal PCB footprint. | • High design complexity.<br>• Noise amplification issues.<br>• Requires precise component matching. |
 
 ### Final Selection: Discrete Shunt Resistor & Op-Amp (TLV9002)
 
@@ -46,8 +46,8 @@ The voltage regulator steps down the incoming motor power bus supply to a stable
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: L7805 / LM7805 Linear Regulator**<br>Estimated cost: $0.62 | • Simple drop-in design.<br>• Minimal external component requirements.<br>• Extremely low electrical output noise. | • Very low efficiency under high step-down ratios.<br>• High heat dissipation limits current capacity.<br>• Requires thermal heatsinking under load. |
-| **Option 2: Murata OKI-78SR-5/1.5-W36-C**<br>![Switching voltage regulator](images/murata.jpg)<br>Estimated cost: $4.85 | • Switching conversion is generally more efficient.<br>• Reduces heat for large voltage drops.<br>• Compact power-conversion solution. | • Higher cost.<br>• Switching ripple may affect analog measurements.<br>• Requires suitable decoupling and layout. |
+| **Option 1: L7805 / LM7805 Linear Regulator**<br>Estimated cost: $0.62<br>[Product Reference](https://digikey.com) | • Simple drop-in design.<br>• Minimal external component requirements.<br>• Extremely low electrical output noise. | • Very low efficiency under high step-down ratios.<br>• High heat dissipation limits current capacity.<br>• Requires thermal heatsinking under load. |
+| **Option 2: Murata OKI-78SR-5/1.5-W36-C**<br>Estimated cost: $4.85<br>[Official Manufacturer Page](https://murata.com) | • Switching conversion is generally more efficient.<br>• Reduces heat for large voltage drops.<br>• Compact power-conversion solution. | • Higher cost.<br>• Switching ripple may affect analog measurements.<br>• Requires suitable decoupling and layout. |
 
 ### Final Selection: L7805 / LM7805
 
@@ -67,10 +67,10 @@ A switching regulator should be reconsidered if battery runtime or heat becomes 
 
 | Component | Estimated Cost |
 |---|---:|
-| Cytron MD13S | $15.30 |
-| TLV9002 Op-Amp | $0.83 |
-| Pololu 25D gearmotor | $19.95 |
-| L7805 / LM7805 | $0.62 |
+| [Cytron MD13S](https://cytron.io) | $15.30 |
+| [TLV9002 Op-Amp](https://ti.com) | $0.83 |
+| [Pololu 25D gearmotor](https://pololu.com) | $19.95 |
+| [L7805 / LM7805](https://digikey.com) | $0.62 |
 | **Estimated subtotal** | **$36.70** |
 
 The subtotal excludes the lead screw, shaft coupler, mounting hardware, limit switches, shunt resistor, passive components, wiring, and power supply. Prices must be confirmed before purchasing.
@@ -86,4 +86,3 @@ Before final implementation, the team must verify motor current requirements, dr
 The final design should include a reliable method for stopping the motor during an overload, detecting excessive travel, and entering a safe state during an emergency stop.
 
 *Note: All listed prices are estimates for comparison. Final component selection must be based on verified datasheets, exact model numbers, and the electrical and mechanical requirements of the assembled gripper.*
-
