@@ -937,17 +937,17 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: Cytron MD13S</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.cytron.io/image/catalog/products/MD13S/MD13S-1.jpg" data-desc-position="bottom"><img alt="Cytron MD13S motor driver" src="https://www.cytron.io/image/catalog/products/MD13S/MD13S-1.jpg"></a><br>Estimated cost: $15.30<br><a href="https://www.cytron.io/">Product page</a></td>
+<td><strong>Option 1: Cytron MD13S</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/md13s.jpg" data-desc-position="bottom"><img alt="Cytron MD13S motor driver" src="images/md13s.jpg"></a><br>Estimated cost: $15.30</td>
 <td>• MOSFET-based switching.<br>• Bidirectional motor control.<br>• Simplifies wiring.</td>
 <td>• Higher cost than a basic driver IC.<br>• Requires enclosure space.<br>• Stall-current compatibility must be verified.</td>
 </tr>
 <tr>
-<td><strong>Option 2: L298N H-Bridge</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/L298N_Motor_Driver_Module.jpg/320px-L298N_Motor_Driver_Module.jpg" data-desc-position="bottom"><img alt="L298N H-bridge module" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/L298N_Motor_Driver_Module.jpg/320px-L298N_Motor_Driver_Module.jpg"></a><br>Estimated cost: $3.15<br><a href="https://www.digikey.com/">Product reference</a></td>
+<td><strong>Option 2: L298N H-Bridge</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/l298n.jpg" data-desc-position="bottom"><img alt="L298N H-bridge module" src="images/l298n.jpg"></a><br>Estimated cost: $3.15</td>
 <td>• Low cost.<br>• Widely documented.<br>• Supports two motor channels.</td>
 <td>• Significant voltage drop.<br>• More heat.<br>• Lower efficiency.</td>
 </tr>
 <tr>
-<td><strong>Option 3: Discrete MOSFET H-Bridge</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg" data-desc-position="bottom"><img alt="MOSFET transistor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg"></a><br>Estimated cost: $4.20<br><a href="https://www.electronics-tutorials.ws/">Circuit reference</a></td>
+<td><strong>Option 3: Discrete MOSFET H-Bridge</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/mosfet.jpg" data-desc-position="bottom"><img alt="MOSFET transistor" src="images/mosfet.jpg"></a><br>Estimated cost: $4.20</td>
 <td>• Customizable design.<br>• Potentially low conduction losses.<br>• Flexible PCB layout.</td>
 <td>• More complex design.<br>• Shoot-through risk.<br>• More testing required.</td>
 </tr>
@@ -956,8 +956,8 @@
 <h3 id="final-selection-cytron-md13s">Final Selection: Cytron MD13S</h3>
 <p>The Cytron MD13S is the preferred candidate because it integrates the power switching required for bidirectional DC motor control. The final motor variant must be checked against the driver's continuous and peak current ratings before implementation.</p>
 <hr>
-<h2 id="subsystem-2-current-sensing-and-overload-protection">Subsystem 2: Current Sensing and Overload Protection</h2>
-<p>This subsystem measures motor current using a shunt resistor and a signal-conditioning circuit. The microcontroller reads the current measurement and responds to an overload condition.</p>
+<h2 id="subsystem-2-current-sensing">Subsystem 2: Current Sensing</h2>
+<p>The current sensor monitors the motor's power consumption to detect mechanical stalls when the gripper has firmly closed around an object. It provides feedback to the microcontroller to prevent motor burnout and ensure controlled gripping force.</p>
 <table>
 <thead>
 <tr>
@@ -968,28 +968,27 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: Texas Instruments TLV9002</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg" data-desc-position="bottom"><img alt="TLV9002 operational amplifier" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg"></a><br>Estimated cost: $0.83<br><a href="https://www.ti.com/product/TLV9002">Official datasheet</a></td>
-<td>• Dual operational amplifier.<br>• Can amplify a shunt voltage.<br>• Low component cost.</td>
-<td>• Requires external circuitry.<br>• Not a dedicated comparator.<br>• Input/output limits must be checked.</td>
+<td><strong>Option 1: ACS712 Hall-Effect Sensor</strong><br>Estimated cost: $4.50</td>
+<td>• Galvanic isolation protects MCU.<br>• Low internal resistance.<br>• Simple analog voltage output.</td>
+<td>• Susceptible to stray magnetic fields.<br>• High zero-current offset drift.<br>• Lower resolution at very small currents.</td>
 </tr>
 <tr>
-<td><strong>Option 2: Analog Devices AD8210</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg" data-desc-position="bottom"><img alt="Current sensing integrated circuit" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg"></a><br>Estimated cost: $7.85<br><a href="https://www.analog.com/">Manufacturer reference</a></td>
-<td>• Dedicated current-sense amplifier.<br>• Designed for shunt measurements.<br>• Simplifies signal amplification.</td>
-<td>• Higher cost.<br>• Requires a separate threshold detector.<br>• Package availability must be verified.</td>
+<td><strong>Option 2: INA219 High-Side Shunt Monitor</strong><br>Estimated cost: $5.20</td>
+<td>• High accuracy via I2C digital output.<br>• Measures both current and bus voltage.<br>• Programmable calibration.</td>
+<td>• Lacks galvanic isolation.<br>• Requires software overhead for I2C communication.<br>• Solder pads are small for basic prototyping.</td>
 </tr>
 <tr>
-<td><strong>Option 3: Discrete BJT Threshold Circuit</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg" data-desc-position="bottom"><img alt="TO-220 transistor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg"></a><br>Estimated cost: $0.35<br><a href="https://www.electronics-tutorials.ws/">Circuit reference</a></td>
-<td>• Low cost.<br>• Basic components.<br>• Simple threshold concept.</td>
-<td>• Temperature-sensitive threshold.<br>• Lower measurement accuracy.<br>• Requires careful tuning.</td>
+<td><strong>Option 3: Discrete Shunt Resistor &amp; Op-Amp (TLV9002)</strong><br>Estimated cost: $0.83 (Op-Amp only)</td>
+<td>• Extremely cost-effective.<br>• Highly customizable amplification gain.<br>• Minimal PCB footprint.</td>
+<td>• High design complexity.<br>• Noise amplification issues.<br>• Requires precise component matching.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="final-selection-texas-instruments-tlv9002">Final Selection: Texas Instruments TLV9002</h3>
-<p>The TLV9002 is a candidate for the current-sensing circuit because its two amplifier channels can support signal amplification and threshold detection with appropriate external components. The circuit must be designed and tested for the selected motor's current range.</p>
-<p>The TLV9002 is an operational amplifier, not a dedicated comparator. If fast fault detection is required, a dedicated comparator may be more suitable.</p>
+<h3 id="final-selection-discrete-shunt-resistor-op-amp-tlv9002">Final Selection: Discrete Shunt Resistor &amp; Op-Amp (TLV9002)</h3>
+<p>The Discrete Shunt Resistor paired with the TLV9002 operational amplifier is selected to keep the board footprint and hardware budget as minimal as possible during prototyping. </p>
 <hr>
-<h2 id="subsystem-3-dc-motor-and-lead-screw-assembly">Subsystem 3: DC Motor and Lead-Screw Assembly</h2>
-<p>This subsystem supplies the torque required to actuate the gripper fingers. The gearmotor drives a lead screw through a compatible shaft coupler, converting rotational motion into linear movement.</p>
+<h2 id="subsystem-3-voltage-regulation">Subsystem 3: Voltage Regulation</h2>
+<p>The voltage regulator steps down the incoming motor power bus supply to a stable 5 V logic rail to power the logic gates, sensors, and microcontroller instrumentation.</p>
 <table>
 <thead>
 <tr>
@@ -1000,110 +999,12 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: Pololu 25D Metal Gearmotor</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.pololu.com/picture/view/0J4898.1200.jpg" data-desc-position="bottom"><img alt="25D metal gearmotor" src="https://www.pololu.com/picture/view/0J4898.1200.jpg"></a><br>Estimated cost: $19.95<br><a href="https://www.pololu.com/category/115/25d-metal-gearmotors">Product page</a></td>
-<td>• Metal gearbox.<br>• Multiple gear ratios.<br>• Standard 4 mm D-shaped shaft on applicable versions.</td>
-<td>• Requires lead screw and coupler.<br>• Needs a mounting bracket.<br>• Stall current depends on motor variant.</td>
+<td><strong>Option 1: L7805 / LM7805 Linear Regulator</strong><br>Estimated cost: $0.62</td>
+<td>• Simple drop-in design.<br>• Minimal external component requirements.<br>• Extremely low electrical output noise.</td>
+<td>• Very low efficiency under high step-down ratios.<br>• High heat dissipation limits current capacity.<br>• Requires thermal heatsinking under load.</td>
 </tr>
 <tr>
-<td><strong>Option 2: N20 Micro Gearmotor</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Small_DC_Motor.jpg/320px-Small_DC_Motor.jpg" data-desc-position="bottom"><img alt="N20 micro gearmotor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Small_DC_Motor.jpg/320px-Small_DC_Motor.jpg"></a><br>Estimated cost: $9.50<br><a href="https://www.pololu.com/category/60/micro-metal-gearmotors">Product reference</a></td>
-<td>• Compact design.<br>• Lightweight.<br>• Low estimated cost.</td>
-<td>• May provide insufficient gripping torque.<br>• Small gears may be less suitable for heavy loads.<br>• Requires mechanical integration.</td>
-</tr>
-<tr>
-<td><strong>Option 3: Micro Linear Actuator</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Linear_actuator.jpg/320px-Linear_actuator.jpg" data-desc-position="bottom"><img alt="Linear actuator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Linear_actuator.jpg/320px-Linear_actuator.jpg"></a><br>Estimated cost: $55.00<br><a href="https://www.progressiveautomations.com/">Manufacturer reference</a></td>
-<td>• Integrated linear drive.<br>• Simplifies mechanical assembly.<br>• Some models include limit switches.</td>
-<td>• Higher cost.<br>• Fixed dimensions.<br>• Specifications vary by model.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="final-selection-pololu-25d-metal-gearmotor">Final Selection: Pololu 25D Metal Gearmotor</h3>
-<p>The Pololu 25D gearmotor is the preferred candidate because it offers multiple gear ratios and a durable gearbox. A compatible shaft coupler, lead screw, and mechanical supports will be required.</p>
-<p>The motor's voltage, gear ratio, rated current, and stall current must be verified before purchase. The overload circuit should stop the motor when excessive current is detected. Limit switches or another suitable travel-limiting mechanism should prevent excessive movement.</p>
-<hr>
-<h1 id="microcontroller-pin-mapping">Microcontroller Pin Mapping</h1>
-<p>These are proposed assignments and must be verified against the exact microcontroller model.</p>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Connection</th>
-<th>Direction</th>
-<th>Signal</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RC0</td>
-<td>H-Bridge</td>
-<td>Output</td>
-<td>PWM</td>
-<td>Motor speed control.</td>
-</tr>
-<tr>
-<td>RC1</td>
-<td>H-Bridge</td>
-<td>Output</td>
-<td>GPIO</td>
-<td>Motor direction.</td>
-</tr>
-<tr>
-<td>RA1</td>
-<td>Current-sense circuit</td>
-<td>Input</td>
-<td>ADC</td>
-<td>Measures motor current.</td>
-</tr>
-<tr>
-<td>RE1</td>
-<td>Overload detector</td>
-<td>Input</td>
-<td>GPIO/interrupt</td>
-<td>Detects an overload alert.</td>
-</tr>
-<tr>
-<td>RD2</td>
-<td>Board 1 hub</td>
-<td>Input</td>
-<td>UART RX</td>
-<td>Receives commands.</td>
-</tr>
-<tr>
-<td>RD3</td>
-<td>Board 1 hub</td>
-<td>Output</td>
-<td>UART TX</td>
-<td>Sends status information.</td>
-</tr>
-<tr>
-<td>RB0</td>
-<td>Board 1 hub</td>
-<td>Input</td>
-<td>GPIO</td>
-<td>Emergency-stop signal.</td>
-</tr>
-</tbody>
-</table>
-<p>Verify the pin functions, voltage levels, and peripheral routing for the selected microcontroller before wiring.</p>
-<hr>
-<h1 id="part-2-power-budget-and-voltage-regulation">Part 2: Power Budget and Voltage Regulation</h1>
-<p>The regulator provides a stable 5 V logic supply. The motor must use a suitably rated motor power path.</p>
-<table>
-<thead>
-<tr>
-<th>Solution</th>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Option 1: L7805 / LM7805</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg" data-desc-position="bottom"><img alt="L7805 voltage regulator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg"></a><br>Estimated cost: $0.62<br><a href="https://www.st.com/en/power-management/l78.html">Manufacturer reference</a></td>
-<td>• Simple three-terminal regulator.<br>• Regulated 5 V output.<br>• Thermal and short-circuit protection.</td>
-<td>• Converts excess voltage into heat.<br>• Lower efficiency than switching regulators.<br>• Requires thermal evaluation.</td>
-</tr>
-<tr>
-<td><strong>Option 2: Murata OKI-78SR-5/1.5-W36-C</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg" data-desc-position="bottom"><img alt="Switching voltage regulator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg"></a><br>Estimated cost: $4.85<br><a href="https://www.murata.com/">Manufacturer reference</a></td>
+<td><strong>Option 2: Murata OKI-78SR-5/1.5-W36-C</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/murata.jpg" data-desc-position="bottom"><img alt="Switching voltage regulator" src="images/murata.jpg"></a><br>Estimated cost: $4.85</td>
 <td>• Switching conversion is generally more efficient.<br>• Reduces heat for large voltage drops.<br>• Compact power-conversion solution.</td>
 <td>• Higher cost.<br>• Switching ripple may affect analog measurements.<br>• Requires suitable decoupling and layout.</td>
 </tr>
@@ -1112,9 +1013,7 @@
 <h3 id="final-selection-l7805-lm7805">Final Selection: L7805 / LM7805</h3>
 <p>The L7805 is a candidate for the initial low-current logic rail because it is simple to integrate. Its thermal performance must be checked using the actual input voltage and load current.</p>
 <p>For a 12 V input, 5 V output, and 50 mA load:</p>
-<div class="arithmatex">\[
-P_{\text{loss}}=(12-5)(0.05)=0.35\text{ W}
-\]</div>
+<div class="arithmatex">\[P_{\text{loss}}=(12-5)(0.05)=0.35\text{ W}\]</div>
 <p>The regulator dissipates approximately 0.35 W as heat under these assumptions. A heatsink requirement depends on the package and operating conditions.</p>
 <p>A switching regulator should be reconsidered if battery runtime or heat becomes a major concern.</p>
 <hr>
@@ -1132,7 +1031,7 @@ P_{\text{loss}}=(12-5)(0.05)=0.35\text{ W}
 <td style="text-align: right;">$15.30</td>
 </tr>
 <tr>
-<td>TLV9002</td>
+<td>TLV9002 Op-Amp</td>
 <td style="text-align: right;">$0.83</td>
 </tr>
 <tr>
@@ -1154,7 +1053,6 @@ P_{\text{loss}}=(12-5)(0.05)=0.35\text{ W}
 <h1 id="conclusion">Conclusion</h1>
 <p>Board 2 controls the gripper actuator, monitors motor load, and communicates operating status to the bus master. The proposed components prioritize cost, integration, and flexibility during prototyping.</p>
 <p>Before final implementation, the team must verify motor current requirements, driver compatibility, overload response, regulator thermal performance, and microcontroller pin assignments. The assembled lead-screw mechanism must also be tested to ensure that it produces the required gripping force and travel safely.</p>
-<p><em>Image note: The images above are illustrative references and may not depict the exact model listed. Confirm all component specifications using the linked manufacturer documentation.</em></p>
 <p>The final design should include a reliable method for stopping the motor during an overload, detecting excessive travel, and entering a safe state during an emergency stop.</p>
 <p><em>Note: All listed prices are estimates for comparison. Final component selection must be based on verified datasheets, exact model numbers, and the electrical and mechanical requirements of the assembled gripper.</em></p>
 
