@@ -942,7 +942,7 @@
 <td>• Physical module size takes up significant real estate inside a tight enclosure.<br>• Large screw terminals add weight and layout bulk to the PCB design.<br>• Unit cost is substantially higher than deploying discrete IC components.</td>
 </tr>
 <tr>
-<td><strong>Option 2: L298N Dual H-Bridge Driver</strong><br>• Unit Cost: $3.15<br>• <a href="https://digikey.com">STMicroelectronics L298N on DigiKey</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="Image-3.png" data-desc-position="bottom"><img alt="L298N H-bridge module" src="Image-3.png"></a></td>
+<td><strong>Option 2: L298N Dual H-Bridge Driver</strong><br>• Unit Cost: $3.15<br>• <a href="https://digikey.com">STMicroelectronics L298N on DigiKey</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Image-2.png" data-desc-position="bottom"><img alt="L298N H-bridge module" src="../Image-2.png"></a></td>
 <td>• Classic Multiwatt-15 package features wide, easy-to-solder through-hole pins.<br>• Extensively documented with standard TTL logic interfaces.<br>• Provides independent dual-channel architecture for driving secondary actuators if needed.</td>
 <td>• Outdated bipolar transistor technology causes a high internal forward voltage drop.<br>• Dissipates large amounts of waste energy entirely as heat, requiring a bulky external heatsink.<br>• Inefficient power conversion reduces total battery efficiency.</td>
 </tr>
@@ -973,12 +973,12 @@
 <td>• Requires a complex external network of discrete tuning resistors to establish trip thresholds.<br>• Surface-mount footprints can be challenging to hand-solder without breakout adapters.<br>• Low 1MHz bandwidth bounds fast high-frequency peak tracking speeds.</td>
 </tr>
 <tr>
-<td><strong>Option 2: Analog Devices AD8210</strong><br>• Unit Cost: $7.85<br>• <a href="https://analog.com">Analog Devices AD8210 Current Shunt Page</a></td>
+<td><strong>Option 2: Analog Devices AD8210</strong><br>• Unit Cost: $7.85<br>• <a href="https://analog.com">Analog Devices AD8210 Current Shunt Page</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Image-AD8210.png" data-desc-position="bottom"><img alt="Analog Devices AD8210" src="../Image-AD8210.png"></a></td>
 <td>• High-precision dedicated architecture offers highly accurate shunt tracking capabilities.<br>• Provides reliable handling of high common-mode voltage fluctuations during inductive kicks.<br>• Minimizes additional hardware overhead requirements across analog trace paths.</td>
 <td>• The component is primarily sold in surface-mount formats, requiring an assembly adapter board.<br>• High baseline cost budget allocation for a basic current feedback interface function.<br>• Lacks an integrated threshold comparator, necessitating a secondary IC component.</td>
 </tr>
 <tr>
-<td><strong>Option 3: Custom Discrete BJT Threshold Switch</strong><br>• Unit Cost: $0.35 ~<br>• <a href="https://electronics-tutorials.ws">Discrete BJT Switching Tutorial</a></td>
+<td><strong>Option 3: Custom Discrete BJT Threshold Switch</strong><br>• Unit Cost: $0.35 ~<br>• <a href="https://electronics-tutorials.ws">Discrete BJT Switching Tutorial</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Image-BJT-Switch.png" data-desc-position="bottom"><img alt="Discrete BJT Switch Circuit" src="../Image-BJT-Switch.png"></a></td>
 <td>• Absolute lowest baseline components cost metric.<br>• Dirt-simple routing architecture via basic components.<br>• Avoids active operational amplifier chip allocations.</td>
 <td>• Highly vulnerable to thermal drifts shifting trip thresholds.<br>• Soft turn-on regions yield undefined transitional states.<br>• High shunt drop voltage required to trigger base junction.</td>
 </tr>
@@ -1004,12 +1004,12 @@
 <td>• High stall currents generate immense inductive flyback spikes during motor reversals.<br>• Mechanical brushes experience degradation over extended high-load duties.<br>• Bare metal output shaft requires precision couplers to prevent mechanical binding.</td>
 </tr>
 <tr>
-<td><strong>Option 2: Basic Hobby 130-Size DC Motor</strong><br>• Unit Cost: $2.50<br>• <a href="https://digikey.com">Brushed 130-Size DC Motors on DigiKey</a></td>
+<td><strong>Option 2: Basic Hobby 130-Size DC Motor</strong><br>• Unit Cost: $2.50<br>• <a href="https://digikey.com">Brushed 130-Size DC Motors on DigiKey</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Image-Hobby130.png" data-desc-position="bottom"><img alt="Hobby 130 DC Motor" src="../Image-Hobby130.png"></a></td>
 <td>• Low-profile design minimizes weight on the distal arm joints.<br>• Dirt-cheap replacement procurement fits lean laboratory development cycles.<br>• Simple two-wire input keeps connectivity issues basic.</td>
 <td>• Pathetically low output holding torque cannot maintain heavy structural grasp vectors.<br>• Extremely high loose-speed parameters require an external reduction assembly.<br>• Thin plastic press-fit output shafts warp easily under axial side-loads.</td>
 </tr>
 <tr>
-<td><strong>Option 3: Standard Size NEMA 17 Stepper Motor</strong><br>• Unit Cost: $14.50<br>• <a href="https://digikey.com">NEMA 17 Stepper Motors Lineup</a></td>
+<td><strong>Option 3: Standard Size NEMA 17 Stepper Motor</strong><br>• Unit Cost: $14.50<br>• <a href="https://digikey.com">NEMA 17 Stepper Motors Lineup</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Image-NEMA17.png" data-desc-position="bottom"><img alt="NEMA 17 Stepper Motor" src="../Image-NEMA17.png"></a></td>
 <td>• Delivers perfect, precise non-accumulating open-loop position profiling paths.<br>• Eliminates the basic requirement for secondary external safety limit endstops.<br>• Solid holding torque signatures lock structural positions firmly when unpowered.</td>
 <td>• Severe weight penalty adds excessive stress to the vertical linkage arm structures.<br>• Demands specialized complex phase-step driver indexing configurations instead of raw PWM lanes.<br>• Heavy continuous power drain drops system battery charge rapidly even while idling.</td>
 </tr>
