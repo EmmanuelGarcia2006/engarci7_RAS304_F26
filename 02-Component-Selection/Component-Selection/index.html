@@ -937,12 +937,12 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: Cytron MD13S Module</strong><br>• Unit Cost: $15.30<br>• <a href="https://cytron.io">Official Cytron MD13S Product Page</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image1.png" data-desc-position="bottom"><img alt="Cytron MD13S motor driver" src="../image1.png"></a></td>
+<td><strong>Option 1: Cytron MD13S Module</strong><br>• Unit Cost: $15.30<br>• <a href="https://cytron.io">Official Cytron MD13S Product Page</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="Image-1.png" data-desc-position="bottom"><img alt="Cytron MD13S motor driver" src="Image-1.png"></a></td>
 <td>• High continuous current handling up to 13A easily covers motor stall conditions.<br>• Through-hole header connections allow for easy prototyping and soldering.<br>• Employs a full NMOS design that generates minimal operational heat.</td>
 <td>• Physical module size takes up significant real estate inside a tight enclosure.<br>• Large screw terminals add weight and layout bulk to the PCB design.<br>• Unit cost is substantially higher than deploying discrete IC components.</td>
 </tr>
 <tr>
-<td><strong>Option 2: L298N Dual H-Bridge Driver</strong><br>• Unit Cost: $3.15<br>• <a href="https://digikey.com">STMicroelectronics L298N on DigiKey</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image3.png" data-desc-position="bottom"><img alt="L298N H-bridge module" src="../image3.png"></a></td>
+<td><strong>Option 2: L298N Dual H-Bridge Driver</strong><br>• Unit Cost: $3.15<br>• <a href="https://digikey.com">STMicroelectronics L298N on DigiKey</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="Image-3.png" data-desc-position="bottom"><img alt="L298N H-bridge module" src="Image-3.png"></a></td>
 <td>• Classic Multiwatt-15 package features wide, easy-to-solder through-hole pins.<br>• Extensively documented with standard TTL logic interfaces.<br>• Provides independent dual-channel architecture for driving secondary actuators if needed.</td>
 <td>• Outdated bipolar transistor technology causes a high internal forward voltage drop.<br>• Dissipates large amounts of waste energy entirely as heat, requiring a bulky external heatsink.<br>• Inefficient power conversion reduces total battery efficiency.</td>
 </tr>
@@ -968,7 +968,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: Texas Instruments TLV9002</strong><br>• Unit Cost: $0.83<br>• <a href="https://ti.com">Texas Instruments TLV9002 Product Page</a></td>
+<td><strong>Option 1: Texas Instruments TLV9002</strong><br>• Unit Cost: $0.83<br>• <a href="https://ti.com">Texas Instruments TLV9002 Product Page</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="Image-TLV9002.png" data-desc-position="bottom"><img alt="TI TLV9002 Op-Amp" src="Image-TLV9002.png"></a></td>
 <td>• Dual rail-to-rail configuration fits both current shunt amplification and comparator roles simultaneously.<br>• Integrated RFI and EMI filter circuitry limits motor switching noise injection.<br>• Very low unit cost fits tight project budgets.</td>
 <td>• Requires a complex external network of discrete tuning resistors to establish trip thresholds.<br>• Surface-mount footprints can be challenging to hand-solder without breakout adapters.<br>• Low 1MHz bandwidth bounds fast high-frequency peak tracking speeds.</td>
 </tr>
@@ -999,7 +999,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: Pololu 25D High-Torque Gearmotor</strong><br>• Unit Cost: $19.95<br>• <a href="https://pololu.com">Pololu 25D Metal Gearmotors Category</a></td>
+<td><strong>Option 1: Pololu 25D High-Torque Gearmotor</strong><br>• Unit Cost: $19.95<br>• <a href="https://pololu.com">Pololu 25D Metal Gearmotors Category</a><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="Image-Pololu25D.png" data-desc-position="bottom"><img alt="Pololu 25D Motor" src="Image-Pololu25D.png"></a></td>
 <td>• Integrated steel heavy-duty spur gearbox provides immense mechanical advantage.<br>• Compact 25mm outer diameter mounts easily inside custom structured grip configurations.<br>• Direct face-mounting tapped holes ease concentric coupling setup.</td>
 <td>• High stall currents generate immense inductive flyback spikes during motor reversals.<br>• Mechanical brushes experience degradation over extended high-load duties.<br>• Bare metal output shaft requires precision couplers to prevent mechanical binding.</td>
 </tr>
@@ -1064,13 +1064,6 @@
 <td>INPUT</td>
 <td>Digital (UART)</td>
 <td>Receives active operational commands from Bus Master (RX)</td>
-</tr>
-<tr>
-<td><strong>RD3</strong></td>
-<td>Board 1 Hub Connector</td>
-<td>OUTPUT</td>
-<td>Digital (UART)</td>
-<td>Transmits status packets back to Sakiya's Master Node (TX)</td>
 </tr>
 </tbody>
 </table>
