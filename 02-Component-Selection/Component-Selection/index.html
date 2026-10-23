@@ -29,7 +29,7 @@
 
     
       
-        <title>Individual Component Selection Report - RAS 304 Emmanuel Data Sheet</title>
+        <title>RAS 304 — Individual Component Selection Report - RAS 304 Emmanuel Data Sheet</title>
       
     
     
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#individual-component-selection-report" class="md-skip">
+        <a href="#ras-304-individual-component-selection-report" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Individual Component Selection Report
+              RAS 304 — Individual Component Selection Report
             
           </span>
         </div>
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    Individual Component Selection Report
+    RAS 304 — Individual Component Selection Report
   
 
     
@@ -916,306 +916,242 @@
   
 
 
-<h1 id="individual-component-selection-report">Individual Component Selection Report</h1>
+<h1 id="ras-304-individual-component-selection-report">RAS 304 — Individual Component Selection Report</h1>
 <p><strong>Name:</strong> Emmanuel Garcia<br>
 <strong>Assigned Module:</strong> Board 2 – Grip Actuation Node<br>
 <strong>Course:</strong> RAS 304 Embedded Systems Design</p>
 <hr>
 <h1 id="part-1-major-component-selections">Part 1: Major Component Selections</h1>
 <h2 id="subsystem-1-bidirectional-h-bridge-motor-driver">Subsystem 1: Bidirectional H-Bridge Motor Driver</h2>
-<p>This subsystem converts microcontroller control signals into the electrical power needed to operate the DC motor and lead-screw assembly. The H-bridge enables forward and reverse motor operation, allowing the gripper to open and close. PWM signals provide motor speed control.</p>
+<p>The H-bridge converts microcontroller control signals into power for the DC motor. It supports forward and reverse operation and PWM speed control for opening and closing the gripper.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Solution</th>
-<th style="text-align: left;">Pros</th>
-<th style="text-align: left;">Cons</th>
+<th>Solution</th>
+<th>Pros</th>
+<th>Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Option 1: Cytron MD13S Module</strong><br>Estimated Cost: $15.30<br><a href="https://www.cytron.io/">Product Reference</a></td>
-<td style="text-align: left;">• MOSFET-based switching provides efficient motor control.<br>• Supports bidirectional DC motor operation.<br>• Integrated driver simplifies wiring and prototyping.</td>
-<td style="text-align: left;">• Higher cost than a basic motor driver IC.<br>• Requires additional enclosure or PCB space.<br>• Motor stall current must remain within the driver's ratings.</td>
+<td><strong>Option 1: Cytron MD13S</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.cytron.io/image/catalog/products/MD13S/MD13S-1.jpg" data-desc-position="bottom"><img alt="Cytron MD13S motor driver" src="https://www.cytron.io/image/catalog/products/MD13S/MD13S-1.jpg"></a><br>Estimated cost: $15.30<br><a href="https://www.cytron.io/">Product page</a></td>
+<td>• MOSFET-based switching.<br>• Bidirectional motor control.<br>• Simplifies wiring.</td>
+<td>• Higher cost than a basic driver IC.<br>• Requires enclosure space.<br>• Stall-current compatibility must be verified.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 2: L298N Dual H-Bridge Driver</strong><br>Estimated Cost: $3.15<br><a href="https://www.digikey.com/">Product Reference</a></td>
-<td style="text-align: left;">• Low cost and widely documented.<br>• Supports forward and reverse motor operation.<br>• Can control two DC motors independently.</td>
-<td style="text-align: left;">• Bipolar output stages create significant voltage drops.<br>• Generates more heat than modern MOSFET drivers.<br>• Lower efficiency can reduce battery runtime.</td>
+<td><strong>Option 2: L298N H-Bridge</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/L298N_Motor_Driver_Module.jpg/320px-L298N_Motor_Driver_Module.jpg" data-desc-position="bottom"><img alt="L298N H-bridge module" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/L298N_Motor_Driver_Module.jpg/320px-L298N_Motor_Driver_Module.jpg"></a><br>Estimated cost: $3.15<br><a href="https://www.digikey.com/">Product reference</a></td>
+<td>• Low cost.<br>• Widely documented.<br>• Supports two motor channels.</td>
+<td>• Significant voltage drop.<br>• More heat.<br>• Lower efficiency.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 3: Custom Discrete MOSFET H-Bridge</strong><br>Estimated Cost: $4.20<br><a href="https://www.electronics-tutorials.ws/">Design Reference</a></td>
-<td style="text-align: left;">• Customizable for the motor and PCB layout.<br>• Can achieve low conduction losses with suitable MOSFETs.<br>• Offers flexibility for future design changes.</td>
-<td style="text-align: left;">• Requires additional components and gate-drive circuitry.<br>• Incorrect switching can cause destructive shoot-through.<br>• Requires more design, testing, and debugging.</td>
+<td><strong>Option 3: Discrete MOSFET H-Bridge</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg" data-desc-position="bottom"><img alt="MOSFET transistor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg"></a><br>Estimated cost: $4.20<br><a href="https://www.electronics-tutorials.ws/">Circuit reference</a></td>
+<td>• Customizable design.<br>• Potentially low conduction losses.<br>• Flexible PCB layout.</td>
+<td>• More complex design.<br>• Shoot-through risk.<br>• More testing required.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="final-selection-option-1-cytron-md13s-module">Final Selection: Option 1 — Cytron MD13S Module</h3>
-<p>The Cytron MD13S is selected because it provides an integrated solution for bidirectional DC motor control and simplifies hardware development. Its MOSFET-based design offers efficient switching while reducing the complexity of designing and troubleshooting a discrete H-bridge.</p>
-<p>Before finalizing the design, the selected motor's rated current, startup current, and stall current must be checked against the driver's continuous and peak current ratings. Appropriate overcurrent protection is also required to prevent damage if the gripper becomes mechanically jammed.</p>
+<h3 id="final-selection-cytron-md13s">Final Selection: Cytron MD13S</h3>
+<p>The Cytron MD13S is the preferred candidate because it integrates the power switching required for bidirectional DC motor control. The final motor variant must be checked against the driver's continuous and peak current ratings before implementation.</p>
 <hr>
-<h2 id="subsystem-2-motor-current-sensing-and-overload-protection">Subsystem 2: Motor Current Sensing and Overload Protection</h2>
-<p>This subsystem measures motor current to estimate the actuator load and detect possible mechanical stalls. A low-side shunt resistor produces a small voltage proportional to motor current. An amplifier conditions the signal for the microcontroller's analog-to-digital converter (ADC), while a threshold-detection circuit can generate a digital overload alert.</p>
+<h2 id="subsystem-2-current-sensing-and-overload-protection">Subsystem 2: Current Sensing and Overload Protection</h2>
+<p>This subsystem measures motor current using a shunt resistor and a signal-conditioning circuit. The microcontroller reads the current measurement and responds to an overload condition.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Solution</th>
-<th style="text-align: left;">Pros</th>
-<th style="text-align: left;">Cons</th>
+<th>Solution</th>
+<th>Pros</th>
+<th>Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Option 1: Texas Instruments TLV9002</strong><br>Estimated Cost: $0.83<br><a href="https://www.ti.com/product/TLV9002">Product Datasheet</a></td>
-<td style="text-align: left;">• Dual rail-to-rail operational amplifier.<br>• Can amplify a shunt-resistor voltage and support threshold detection with external components.<br>• Low power consumption and low component cost.</td>
-<td style="text-align: left;">• Requires external resistors and a suitable reference voltage.<br>• Is not a dedicated current-sense amplifier or comparator.<br>• Input/output limits and response time must be evaluated.</td>
+<td><strong>Option 1: Texas Instruments TLV9002</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg" data-desc-position="bottom"><img alt="TLV9002 operational amplifier" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg"></a><br>Estimated cost: $0.83<br><a href="https://www.ti.com/product/TLV9002">Official datasheet</a></td>
+<td>• Dual operational amplifier.<br>• Can amplify a shunt voltage.<br>• Low component cost.</td>
+<td>• Requires external circuitry.<br>• Not a dedicated comparator.<br>• Input/output limits must be checked.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 2: Analog Devices AD8210</strong><br>Estimated Cost: $7.85<br><a href="https://www.analog.com/">Product Reference</a></td>
-<td style="text-align: left;">• Dedicated current-sense amplifier.<br>• Designed for shunt-voltage measurement in high common-mode-voltage applications.<br>• Reduces the need to design a discrete amplifier stage.</td>
-<td style="text-align: left;">• Higher component cost.<br>• Requires a separate threshold detector for a digital overload alert.<br>• Package and assembly requirements must be checked.</td>
+<td><strong>Option 2: Analog Devices AD8210</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg" data-desc-position="bottom"><img alt="Current sensing integrated circuit" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg"></a><br>Estimated cost: $7.85<br><a href="https://www.analog.com/">Manufacturer reference</a></td>
+<td>• Dedicated current-sense amplifier.<br>• Designed for shunt measurements.<br>• Simplifies signal amplification.</td>
+<td>• Higher cost.<br>• Requires a separate threshold detector.<br>• Package availability must be verified.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 3: Discrete BJT Threshold Circuit</strong><br>Estimated Cost: $0.35</td>
-<td style="text-align: left;">• Low component cost.<br>• Uses basic electronic components.<br>• Can provide a simple threshold-triggered output.</td>
-<td style="text-align: left;">• Trip point can vary with transistor characteristics and temperature.<br>• Provides limited measurement accuracy.<br>• Requires careful design to avoid unreliable triggering.</td>
+<td><strong>Option 3: Discrete BJT Threshold Circuit</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg" data-desc-position="bottom"><img alt="TO-220 transistor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg"></a><br>Estimated cost: $0.35<br><a href="https://www.electronics-tutorials.ws/">Circuit reference</a></td>
+<td>• Low cost.<br>• Basic components.<br>• Simple threshold concept.</td>
+<td>• Temperature-sensitive threshold.<br>• Lower measurement accuracy.<br>• Requires careful tuning.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="final-selection-option-1-texas-instruments-tlv9002">Final Selection: Option 1 — Texas Instruments TLV9002</h3>
-<p>The TLV9002 is selected as a cost-effective candidate because its two operational amplifier channels can support signal amplification and threshold detection when used with an appropriate external circuit.</p>
-<p>One channel can amplify the voltage across the current-sense shunt resistor, while the second can be configured for threshold detection. The microcontroller can read the conditioned analog current signal and respond to a digital overload alert if that circuit is implemented.</p>
-<p>The TLV9002 is an operational amplifier, not a dedicated comparator. Its input range, output behavior, response time, and recovery from saturation must be verified before using it as an overload detector. A dedicated comparator may be a better alternative if faster or more predictable fault detection is required.</p>
-<p>The overload threshold will be established after the selected motor's current characteristics have been verified. If excessive current is detected, the controller should disable the motor driver and enter a safe state.</p>
+<h3 id="final-selection-texas-instruments-tlv9002">Final Selection: Texas Instruments TLV9002</h3>
+<p>The TLV9002 is a candidate for the current-sensing circuit because its two amplifier channels can support signal amplification and threshold detection with appropriate external components. The circuit must be designed and tested for the selected motor's current range.</p>
+<p>The TLV9002 is an operational amplifier, not a dedicated comparator. If fast fault detection is required, a dedicated comparator may be more suitable.</p>
 <hr>
 <h2 id="subsystem-3-dc-motor-and-lead-screw-assembly">Subsystem 3: DC Motor and Lead-Screw Assembly</h2>
-<p>This subsystem provides the mechanical torque required to actuate the gripper fingers. A 12 V DC gearmotor drives a lead screw through a compatible shaft coupler, converting rotational motion into linear movement. The motor is controlled by the Cytron MD13S H-Bridge, allowing bidirectional operation for opening and closing the gripper.</p>
+<p>This subsystem supplies the torque required to actuate the gripper fingers. The gearmotor drives a lead screw through a compatible shaft coupler, converting rotational motion into linear movement.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Solution</th>
-<th style="text-align: left;">Pros</th>
-<th style="text-align: left;">Cons</th>
+<th>Solution</th>
+<th>Pros</th>
+<th>Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Option 1: Pololu 25D Metal Gearmotor</strong><br>Estimated Cost: $19.95<br><a href="https://www.pololu.com/category/115/25d-metal-gearmotors">Product Link</a></td>
-<td style="text-align: left;">• Metal gearbox provides durability and multiple gear-ratio options.<br>• Standard 4 mm D-shaped output shaft supports compatible couplers.<br>• Multiple motor configurations allow flexibility when balancing speed and torque.</td>
-<td style="text-align: left;">• Requires a separate shaft coupler, lead screw, and mechanical supports.<br>• Requires a suitable mounting bracket.<br>• Stall current varies by motor version and must be verified.</td>
+<td><strong>Option 1: Pololu 25D Metal Gearmotor</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.pololu.com/picture/view/0J4898.1200.jpg" data-desc-position="bottom"><img alt="25D metal gearmotor" src="https://www.pololu.com/picture/view/0J4898.1200.jpg"></a><br>Estimated cost: $19.95<br><a href="https://www.pololu.com/category/115/25d-metal-gearmotors">Product page</a></td>
+<td>• Metal gearbox.<br>• Multiple gear ratios.<br>• Standard 4 mm D-shaped shaft on applicable versions.</td>
+<td>• Requires lead screw and coupler.<br>• Needs a mounting bracket.<br>• Stall current depends on motor variant.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 2: N20 Micro Gearmotor with Lead-Screw Mechanism</strong><br>Estimated Cost: $9.50<br><a href="https://www.pololu.com/category/60/micro-metal-gearmotors">Product Reference</a></td>
-<td style="text-align: left;">• Compact and lightweight design.<br>• Fits smaller gripper assemblies.<br>• Lower estimated cost.</td>
-<td style="text-align: left;">• May not provide sufficient torque for higher gripping forces.<br>• Small gears and shafts may be less suitable for high mechanical loads.<br>• May require custom lead-screw mounting and alignment.</td>
+<td><strong>Option 2: N20 Micro Gearmotor</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Small_DC_Motor.jpg/320px-Small_DC_Motor.jpg" data-desc-position="bottom"><img alt="N20 micro gearmotor" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Small_DC_Motor.jpg/320px-Small_DC_Motor.jpg"></a><br>Estimated cost: $9.50<br><a href="https://www.pololu.com/category/60/micro-metal-gearmotors">Product reference</a></td>
+<td>• Compact design.<br>• Lightweight.<br>• Low estimated cost.</td>
+<td>• May provide insufficient gripping torque.<br>• Small gears may be less suitable for heavy loads.<br>• Requires mechanical integration.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 3: Progressive Automations Micro Linear Actuator</strong><br>Estimated Cost: $55.00<br><a href="https://www.progressiveautomations.com/">Product Link</a></td>
-<td style="text-align: left;">• Integrates a motor and linear drive mechanism.<br>• Reduces the need for a custom motor-to-screw coupling.<br>• Some models include built-in limit switches.</td>
-<td style="text-align: left;">• Higher cost than a separate gearmotor and lead screw.<br>• Fixed dimensions may restrict the gripper layout.<br>• Speed, stroke, voltage, and load ratings depend on the selected model.</td>
+<td><strong>Option 3: Micro Linear Actuator</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Linear_actuator.jpg/320px-Linear_actuator.jpg" data-desc-position="bottom"><img alt="Linear actuator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Linear_actuator.jpg/320px-Linear_actuator.jpg"></a><br>Estimated cost: $55.00<br><a href="https://www.progressiveautomations.com/">Manufacturer reference</a></td>
+<td>• Integrated linear drive.<br>• Simplifies mechanical assembly.<br>• Some models include limit switches.</td>
+<td>• Higher cost.<br>• Fixed dimensions.<br>• Specifications vary by model.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="final-selection-option-1-pololu-25d-metal-gearmotor">Final Selection: Option 1 — Pololu 25D Metal Gearmotor</h3>
-<p>The Pololu 25D metal gearmotor is selected as the preferred candidate because it offers a durable gearbox, a standard 4 mm D-shaped output shaft, and multiple gear ratios for balancing torque and speed. Its modular design allows the team to customize the lead-screw mechanism to meet the gripper's mechanical requirements.</p>
-<p>A compatible shaft coupler will connect the motor output to the lead screw. Mechanical supports will maintain alignment and reduce unwanted loads on the gearbox shaft. The gear ratio and lead-screw pitch will be selected according to the required gripping force and opening/closing speed.</p>
-<p>The exact 12 V motor variant must be verified before purchase. Different Pololu 25D variants have different stall-current ratings, so the selected motor must be compatible with the Cytron MD13S driver's ratings and the power supply's current capabilities.</p>
-<p>The current-sensing subsystem will monitor motor load and help detect stalls or excessive gripping force. When a defined fault threshold is reached, the controller should stop or reverse the motor instead of allowing a prolonged stall.</p>
-<p><strong>Design Considerations:</strong>
-- Verify motor voltage, gear ratio, rated current, and stall current.
-- Select a compatible shaft coupler and lead screw.
-- Include suitable mechanical supports and mounting hardware.
-- Add limit switches or another reliable method to prevent excessive travel.
-- Establish and test a safe overload threshold.
-- Confirm that the motor driver, wiring, and power supply support expected operating currents.</p>
+<h3 id="final-selection-pololu-25d-metal-gearmotor">Final Selection: Pololu 25D Metal Gearmotor</h3>
+<p>The Pololu 25D gearmotor is the preferred candidate because it offers multiple gear ratios and a durable gearbox. A compatible shaft coupler, lead screw, and mechanical supports will be required.</p>
+<p>The motor's voltage, gear ratio, rated current, and stall current must be verified before purchase. The overload circuit should stop the motor when excessive current is detected. Limit switches or another suitable travel-limiting mechanism should prevent excessive movement.</p>
 <hr>
 <h1 id="microcontroller-pin-mapping">Microcontroller Pin Mapping</h1>
-<p>The following pin assignments are proposed for the grip actuation node. They must be verified against the exact microcontroller model and its datasheet before implementation.</p>
+<p>These are proposed assignments and must be verified against the exact microcontroller model.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Microcontroller Pin</th>
-<th style="text-align: left;">Subsystem Connection</th>
-<th style="text-align: left;">Signal Direction</th>
-<th style="text-align: left;">Signal Type</th>
-<th style="text-align: left;">Functional Description</th>
+<th>Pin</th>
+<th>Connection</th>
+<th>Direction</th>
+<th>Signal</th>
+<th>Function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>RC0</strong></td>
-<td style="text-align: left;">H-Bridge</td>
-<td style="text-align: left;">Output</td>
-<td style="text-align: left;">PWM</td>
-<td style="text-align: left;">Controls motor speed through duty-cycle modulation.</td>
+<td>RC0</td>
+<td>H-Bridge</td>
+<td>Output</td>
+<td>PWM</td>
+<td>Motor speed control.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>RC1</strong></td>
-<td style="text-align: left;">H-Bridge</td>
-<td style="text-align: left;">Output</td>
-<td style="text-align: left;">Digital GPIO</td>
-<td style="text-align: left;">Selects motor direction.</td>
+<td>RC1</td>
+<td>H-Bridge</td>
+<td>Output</td>
+<td>GPIO</td>
+<td>Motor direction.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>RA1</strong></td>
-<td style="text-align: left;">Current-Sense Amplifier</td>
-<td style="text-align: left;">Input</td>
-<td style="text-align: left;">Analog ADC</td>
-<td style="text-align: left;">Measures the conditioned motor-current signal.</td>
+<td>RA1</td>
+<td>Current-sense circuit</td>
+<td>Input</td>
+<td>ADC</td>
+<td>Measures motor current.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>RE1</strong></td>
-<td style="text-align: left;">Overload Detection Circuit</td>
-<td style="text-align: left;">Input</td>
-<td style="text-align: left;">Digital GPIO/Interrupt</td>
-<td style="text-align: left;">Signals an overcurrent or stall condition.</td>
+<td>RE1</td>
+<td>Overload detector</td>
+<td>Input</td>
+<td>GPIO/interrupt</td>
+<td>Detects an overload alert.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>RD2</strong></td>
-<td style="text-align: left;">Board 1 Hub Connector</td>
-<td style="text-align: left;">Input</td>
-<td style="text-align: left;">UART RX, proposed</td>
-<td style="text-align: left;">Receives operating commands from the bus master.</td>
+<td>RD2</td>
+<td>Board 1 hub</td>
+<td>Input</td>
+<td>UART RX</td>
+<td>Receives commands.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>RD3</strong></td>
-<td style="text-align: left;">Board 1 Hub Connector</td>
-<td style="text-align: left;">Output</td>
-<td style="text-align: left;">UART TX, proposed</td>
-<td style="text-align: left;">Sends status information to the bus master.</td>
+<td>RD3</td>
+<td>Board 1 hub</td>
+<td>Output</td>
+<td>UART TX</td>
+<td>Sends status information.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>RB0</strong></td>
-<td style="text-align: left;">Board 1 Hub Connector</td>
-<td style="text-align: left;">Input</td>
-<td style="text-align: left;">Digital GPIO</td>
-<td style="text-align: left;">Receives the system-wide emergency-stop signal.</td>
+<td>RB0</td>
+<td>Board 1 hub</td>
+<td>Input</td>
+<td>GPIO</td>
+<td>Emergency-stop signal.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="pin-mapping-implementation-notes">Pin Mapping Implementation Notes</h3>
-<ul>
-<li>Confirm that the selected microcontroller supports the listed functions on these pins.</li>
-<li>Configure the PWM peripheral rather than assuming every GPIO pin supports hardware PWM.</li>
-<li>Verify UART pin assignments and peripheral routing for the exact microcontroller.</li>
-<li>Use appropriate signal conditioning and protection for the current-sense and overload inputs.</li>
-<li>Design the emergency-stop function so that a fault places the motor driver in a safe state rather than relying exclusively on software.</li>
-<li>Verify the electrical voltage levels between the microcontroller, motor driver, and other connected boards.</li>
-</ul>
+<p>Verify the pin functions, voltage levels, and peripheral routing for the selected microcontroller before wiring.</p>
 <hr>
-<h1 id="part-2-power-budget-and-voltage-regulator-selection">Part 2: Power Budget and Voltage Regulator Selection</h1>
-<p>The voltage regulator supplies a stable 5 V logic rail for the microcontroller and current-sensing circuitry. The motor should use a separate, appropriately rated power path, with a common ground where required by the selected driver and sensing design.</p>
+<h1 id="part-2-power-budget-and-voltage-regulation">Part 2: Power Budget and Voltage Regulation</h1>
+<p>The regulator provides a stable 5 V logic supply. The motor must use a suitably rated motor power path.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Solution</th>
-<th style="text-align: left;">Pros</th>
-<th style="text-align: left;">Cons</th>
+<th>Solution</th>
+<th>Pros</th>
+<th>Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Option 1: STMicroelectronics L7805 / LM7805</strong><br>Estimated Cost: $0.62<br><a href="https://www.st.com/en/power-management/l78.html">Product Datasheet</a></td>
-<td style="text-align: left;">• Simple three-terminal linear regulator.<br>• Provides a regulated 5 V output.<br>• Includes thermal overload and short-circuit protection.</td>
-<td style="text-align: left;">• Converts excess input voltage into heat.<br>• Less efficient than a switching regulator.<br>• Requires appropriate input/output capacitors and thermal design.</td>
+<td><strong>Option 1: L7805 / LM7805</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg" data-desc-position="bottom"><img alt="L7805 voltage regulator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/TO-220_package.jpg/320px-TO-220_package.jpg"></a><br>Estimated cost: $0.62<br><a href="https://www.st.com/en/power-management/l78.html">Manufacturer reference</a></td>
+<td>• Simple three-terminal regulator.<br>• Regulated 5 V output.<br>• Thermal and short-circuit protection.</td>
+<td>• Converts excess voltage into heat.<br>• Lower efficiency than switching regulators.<br>• Requires thermal evaluation.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Option 2: Murata OKI-78SR-5/1.5-W36-C</strong><br>Estimated Cost: $4.85<br><a href="https://www.murata.com/">Product Reference</a></td>
-<td style="text-align: left;">• Switching step-down regulator offers higher efficiency.<br>• Reduces heat compared with a linear regulator for large voltage drops.<br>• Provides a compact power-conversion solution.</td>
-<td style="text-align: left;">• Higher component cost.<br>• Switching ripple may affect sensitive analog measurements.<br>• Requires suitable decoupling and PCB layout practices.</td>
+<td><strong>Option 2: Murata OKI-78SR-5/1.5-W36-C</strong><br><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg" data-desc-position="bottom"><img alt="Switching voltage regulator" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Integrated_Circuit.jpg/320px-Integrated_Circuit.jpg"></a><br>Estimated cost: $4.85<br><a href="https://www.murata.com/">Manufacturer reference</a></td>
+<td>• Switching conversion is generally more efficient.<br>• Reduces heat for large voltage drops.<br>• Compact power-conversion solution.</td>
+<td>• Higher cost.<br>• Switching ripple may affect analog measurements.<br>• Requires suitable decoupling and layout.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="final-selection-option-1-l7805-lm7805-linear-regulator">Final Selection: Option 1 — L7805 / LM7805 Linear Regulator</h3>
-<p>The L7805 is selected as the initial logic-rail regulator because the estimated current consumption of the microcontroller and analog sensing circuitry is low. A linear regulator offers a simple design with few external components.</p>
-<p>For a 12 V input, 5 V output, and 50 mA load, the approximate regulator power dissipation is:</p>
-<div class="arithmatex">\[
-P_{\text{loss}}=(V_{\text{in}}-V_{\text{out}})I_{\text{out}}
-\]</div>
+<h3 id="final-selection-l7805-lm7805">Final Selection: L7805 / LM7805</h3>
+<p>The L7805 is a candidate for the initial low-current logic rail because it is simple to integrate. Its thermal performance must be checked using the actual input voltage and load current.</p>
+<p>For a 12 V input, 5 V output, and 50 mA load:</p>
 <div class="arithmatex">\[
 P_{\text{loss}}=(12-5)(0.05)=0.35\text{ W}
 \]</div>
-<p>This is the estimated power converted into heat under those conditions. Whether a heatsink is required depends on the regulator package, ambient temperature, PCB layout, and thermal resistance.</p>
-<p>The linear regulator's simplicity is useful for a low-current prototype. However, its efficiency is limited when stepping down from 12 V to 5 V. Its thermal performance must be evaluated under actual operating conditions.</p>
-<p>If battery runtime or heat becomes a major concern, the Murata switching regulator should be reconsidered. Switching noise can be managed through appropriate decoupling, grounding, and PCB layout.</p>
-<p><strong>Power Design Considerations:</strong>
-- Calculate the total logic-rail current before selecting the regulator.
-- Verify the regulator's input-voltage range and thermal limits.
-- Use the datasheet-recommended input and output capacitors.
-- Keep motor power and logic power appropriately separated.
-- Account for motor startup and stall current when sizing the battery, wiring, and driver.
-- Ensure that the regulated logic supply remains stable during motor operation.</p>
-<hr>
-<h1 id="updated-component-selection-summary">Updated Component Selection Summary</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Subsystem</th>
-<th style="text-align: left;">Selected Component</th>
-<th style="text-align: left;">Primary Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Bidirectional Motor Driver</td>
-<td style="text-align: left;">Cytron MD13S Module</td>
-<td style="text-align: left;">Controls motor direction and speed.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Current Sensing and Overload Detection</td>
-<td style="text-align: left;">Texas Instruments TLV9002</td>
-<td style="text-align: left;">Supports current measurement and threshold detection with external circuitry.</td>
-</tr>
-<tr>
-<td style="text-align: left;">DC Motor and Lead-Screw Assembly</td>
-<td style="text-align: left;">Pololu 25D Metal Gearmotor</td>
-<td style="text-align: left;">Provides mechanical torque to actuate the gripper.</td>
-</tr>
-<tr>
-<td style="text-align: left;">5 V Voltage Regulation</td>
-<td style="text-align: left;">L7805 / LM7805</td>
-<td style="text-align: left;">Supplies regulated voltage to low-current logic circuitry.</td>
-</tr>
-</tbody>
-</table>
+<p>The regulator dissipates approximately 0.35 W as heat under these assumptions. A heatsink requirement depends on the package and operating conditions.</p>
+<p>A switching regulator should be reconsidered if battery runtime or heat becomes a major concern.</p>
 <hr>
 <h1 id="estimated-component-budget">Estimated Component Budget</h1>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Component</th>
+<th>Component</th>
 <th style="text-align: right;">Estimated Cost</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Cytron MD13S Motor Driver</td>
+<td>Cytron MD13S</td>
 <td style="text-align: right;">$15.30</td>
 </tr>
 <tr>
-<td style="text-align: left;">Texas Instruments TLV9002</td>
+<td>TLV9002</td>
 <td style="text-align: right;">$0.83</td>
 </tr>
 <tr>
-<td style="text-align: left;">Pololu 25D Metal Gearmotor</td>
+<td>Pololu 25D gearmotor</td>
 <td style="text-align: right;">$19.95</td>
 </tr>
 <tr>
-<td style="text-align: left;">L7805 / LM7805 Regulator</td>
+<td>L7805 / LM7805</td>
 <td style="text-align: right;">$0.62</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Estimated Subtotal</strong></td>
+<td><strong>Estimated subtotal</strong></td>
 <td style="text-align: right;"><strong>$36.70</strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Budget Note:</strong> The estimated subtotal excludes the lead screw, shaft coupler, mounting hardware, limit switches, current-sense shunt resistor, passive components, wiring, and power supply. Actual prices and component availability must be confirmed before purchasing.</p>
+<p>The subtotal excludes the lead screw, shaft coupler, mounting hardware, limit switches, shunt resistor, passive components, wiring, and power supply. Prices must be confirmed before purchasing.</p>
 <hr>
 <h1 id="conclusion">Conclusion</h1>
-<p>Board 2 is responsible for controlling the robotic gripper's actuator, monitoring motor load, and communicating operating status to the system's bus master.</p>
-<p>The selected components prioritize ease of integration, cost, and flexibility during prototyping. The Cytron MD13S provides bidirectional motor control, the TLV9002 is a candidate for the current-sensing and threshold-detection circuit, the Pololu 25D gearmotor provides mechanical drive, and the L7805 is a candidate for the low-current 5 V logic supply.</p>
-<p>Before final implementation, the team must verify motor current requirements, driver compatibility, overload response, regulator thermal performance, and microcontroller pin assignments. The mechanical assembly must also be tested to confirm that the lead screw produces the required gripping force and travel without exceeding safe operating limits.</p>
+<p>Board 2 controls the gripper actuator, monitors motor load, and communicates operating status to the bus master. The proposed components prioritize cost, integration, and flexibility during prototyping.</p>
+<p>Before final implementation, the team must verify motor current requirements, driver compatibility, overload response, regulator thermal performance, and microcontroller pin assignments. The assembled lead-screw mechanism must also be tested to ensure that it produces the required gripping force and travel safely.</p>
+<p><em>Image note: The images above are illustrative references and may not depict the exact model listed. Confirm all component specifications using the linked manufacturer documentation.</em></p>
 <p>The final design should include a reliable method for stopping the motor during an overload, detecting excessive travel, and entering a safe state during an emergency stop.</p>
 <p><em>Note: All listed prices are estimates for comparison. Final component selection must be based on verified datasheets, exact model numbers, and the electrical and mechanical requirements of the assembled gripper.</em></p>
 
