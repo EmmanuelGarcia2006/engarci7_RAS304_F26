@@ -47,7 +47,8 @@ draft_docs: |
   
 plugins:
   - search
-  - glightbox # allow resize images, see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - glightbox
+  - rss
 
 extra_css:
   - stylesheets/extra.css  
