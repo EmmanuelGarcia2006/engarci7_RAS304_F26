@@ -64,7 +64,6 @@ This subsystem provides the raw mechanical rotational torque required to drive t
 | **RC1** | **Bidirectional H-Bridge** | OUTPUT | Digital (GPIO) | Sets motor directional polarity (High/Low) |
 | **RA1** | **Current Sense Amp** | INPUT | Analog (ADC) | Monitors real-time current scaling for load profiling |
 | **RE1** | **Overload Comparator** | INPUT | Digital (GPIO Interrupt) | Instantly alerts MCU of hard mechanical motor stalls |
-| **RD2** | Board 1 Hub Connector | INPUT | Digital (UART) | Receives active operational commands from Bus Master (RX) |
 
 
 
