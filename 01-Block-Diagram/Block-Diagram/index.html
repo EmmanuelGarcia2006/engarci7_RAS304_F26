@@ -32,7 +32,7 @@
 
     
       
-        <title>Individal Block Diagram - RAS 304 Emmanuel Data Sheet</title>
+        <title>Block Diagram - RAS 304 Emmanuel Data Sheet</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#block-diagram-hardware-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Individal Block Diagram
+              Block Diagram
             
           </span>
         </div>
@@ -515,7 +515,7 @@
   <span class="md-ellipsis">
     
   
-    Individal Block Diagram
+    Block Diagram
   
 
     
@@ -533,7 +533,7 @@
   <span class="md-ellipsis">
     
   
-    Individal Block Diagram
+    Block Diagram
   
 
     
@@ -557,24 +557,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#block-diagram-hardware-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Block Diagram &amp; Hardware Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Diagram &amp; Hardware Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-the-block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose of the Block Diagram
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#system-block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Block Diagram
+        System Block Diagram
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-component-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Component Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -908,24 +936,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#block-diagram-hardware-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Block Diagram &amp; Hardware Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Diagram &amp; Hardware Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-the-block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose of the Block Diagram
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#system-block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Block Diagram
+        System Block Diagram
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-component-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Component Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1002,30 +1058,86 @@
   
 
 
-  <h1>Individal Block Diagram</h1>
+  <h1>Block Diagram</h1>
 
-<h2 id="overview">Overview</h2>
-<p>This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...</p>
-<p>To get some initial formatting help, one can view <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/">"here"</a> some basic techniques.</p>
-<h2 id="example-block-diagram">Example Block Diagram</h2>
-<p>Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../individual-block-diagram.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="../individual-block-diagram.png"></a></p>
+<h2 id="block-diagram-hardware-architecture">Block Diagram &amp; Hardware Architecture</h2>
+<p>This section details the hardware architecture, signal routing, and subsystem breakdown for <strong>Team 104: Grip Actuation Node</strong>.</p>
+<h3 id="purpose-of-the-block-diagram">Purpose of the Block Diagram</h3>
+<p>The purpose of this block diagram is to map out the hardware architecture, signal paths, and power distribution for the Grip Actuation Node. It serves as a visual blueprint to ensure proper hardware integration across the following core elements:</p>
+<ul>
+<li>🔌 <strong>Power Source &amp; Levels:</strong> The node is powered by an external <strong>9V 3A unregulated wall adapter</strong>. This primary source is stepped down using a <strong>5V 1.5A voltage regulator (LM7805)</strong> to safely drive the microcontroller and logic circuitry, isolating the high-power motor lines from sensitive electronics.</li>
+<li>🔍 <strong>Sensor Integration:</strong> For closed-loop safety monitoring, a <strong>low-side shunt resistor</strong> measures current draw from the motor. This analog signal is amplified through a <strong>Texas Instruments TLV9002 Op-Amp array (Comparator)</strong> and read by the microcontroller's ADC to trigger immediate overload protection if values spike.</li>
+<li>⚙️ <strong>Actuator Control:</strong> Physical gripping action is executed by a <strong>Pololu 12V DC Motor &amp; Lead-Screw assembly</strong>. The microcontroller governs this actuator using PWM and direction signals routed through a <strong>Cytron MD13S Bidirectional H-Bridge</strong> motor driver.</li>
+<li>🌐 <strong>Team &amp; Node Connections:</strong> Inter-node communication and system-wide telemetry are facilitated through a centralized multi-pin connector. This links the Grip Actuation Node directly to the rest of the team's decentralized network (Master, Tactile, Proximity, and Slip nodes) over shared digital and analog lines.</li>
+</ul>
+<hr>
+<h3 id="system-block-diagram">System Block Diagram</h3>
+<blockquote>
+<p>⚠️ <strong>Note:</strong> Update your local repository or rename the file if it does not display properly due to the bracket spacing characters in the URL string below.</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./grip_node_block_diagram%20\(1\).png" data-desc-position="bottom"><img alt="Grip Actuation Node Block Diagram" src="./grip_node_block_diagram%20\(1\).png"></a></p>
+<h3 id="core-component-breakdown">Core Component Breakdown</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Subsystem</th>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Manufacturer</th>
+<th style="text-align: left;">Part Number</th>
+<th style="text-align: left;">Signaling / Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Microcontroller</strong></td>
+<td style="text-align: left;">PIC18F57Q43 Curiosity Nano</td>
+<td style="text-align: left;">Microchip</td>
+<td style="text-align: left;">PIC18F57Q43</td>
+<td style="text-align: left;">Main Logic Control</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Actuator Driver</strong></td>
+<td style="text-align: left;">Bidirectional H-Bridge</td>
+<td style="text-align: left;">Cytron</td>
+<td style="text-align: left;">MD13S</td>
+<td style="text-align: left;">PWM &amp; Digital Direction (5V)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Actuator</strong></td>
+<td style="text-align: left;">DC Motor &amp; Lead-Screw</td>
+<td style="text-align: left;">Pololu</td>
+<td style="text-align: left;">#4753 (12V)</td>
+<td style="text-align: left;">Analog Motor Power (0-12VDC)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Current Sensor</strong></td>
+<td style="text-align: left;">Low-Side Shunt Resistor</td>
+<td style="text-align: left;">Yageo</td>
+<td style="text-align: left;">RL2512</td>
+<td style="text-align: left;">Analog (0-100mV)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Signal Amplifier</strong></td>
+<td style="text-align: left;">Op-Amp Array (Comparator)</td>
+<td style="text-align: left;">Texas Instruments</td>
+<td style="text-align: left;">TLV9002</td>
+<td style="text-align: left;">Digital Output to ADC1 (1 pin)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Voltage Regulator</strong></td>
+<td style="text-align: left;">5V 1.5A Linear Regulator</td>
+<td style="text-align: left;">Texas Instruments</td>
+<td style="text-align: left;">LM7805</td>
+<td style="text-align: left;">Power Step-Down</td>
+</tr>
+</tbody>
+</table>
 
 
 
 
 
 
-
-  
-  
 
 
 
