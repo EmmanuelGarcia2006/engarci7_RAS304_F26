@@ -1065,15 +1065,15 @@
 <h3 id="purpose-of-the-block-diagram">Purpose of the Block Diagram</h3>
 <p>The purpose of this block diagram is to map out the hardware architecture, signal paths, and power distribution for the Grip Actuation Node. It serves as a visual blueprint to ensure proper hardware integration across the following core elements:</p>
 <ul>
-<li>🔌 <strong>Power Source &amp; Levels:</strong> The node is powered by an external <strong>9V 3A unregulated wall adapter</strong>. This primary source is stepped down using a <strong>5V 1.5A voltage regulator (LM7805)</strong> to safely drive the microcontroller and logic circuitry, isolating the high-power motor lines from sensitive electronics.</li>
-<li>🔍 <strong>Sensor Integration:</strong> For closed-loop safety monitoring, a <strong>low-side shunt resistor</strong> measures current draw from the motor. This analog signal is amplified through a <strong>Texas Instruments TLV9002 Op-Amp array (Comparator)</strong> and read by the microcontroller's ADC to trigger immediate overload protection if values spike.</li>
-<li>⚙️ <strong>Actuator Control:</strong> Physical gripping action is executed by a <strong>Pololu 12V DC Motor &amp; Lead-Screw assembly</strong>. The microcontroller governs this actuator using PWM and direction signals routed through a <strong>Cytron MD13S Bidirectional H-Bridge</strong> motor driver.</li>
-<li>🌐 <strong>Team &amp; Node Connections:</strong> Inter-node communication and system-wide telemetry are facilitated through a centralized multi-pin connector. This links the Grip Actuation Node directly to the rest of the team's decentralized network (Master, Tactile, Proximity, and Slip nodes) over shared digital and analog lines.</li>
+<li><strong>Power Source &amp; Levels:</strong> The node is powered by an external <strong>9V 3A unregulated wall adapter</strong>. This primary source is stepped down using a <strong>5V 1.5A voltage regulator (LM7805)</strong> to safely drive the microcontroller and logic circuitry, isolating the high-power motor lines from sensitive electronics.</li>
+<li><strong>Sensor Integration:</strong> For closed-loop safety monitoring, a <strong>low-side shunt resistor</strong> measures current draw from the motor. This analog signal is amplified through a <strong>Texas Instruments TLV9002 Op-Amp array (Comparator)</strong> and read by the microcontroller's ADC to trigger immediate overload protection if values spike.</li>
+<li><strong>Actuator Control:</strong> Physical gripping action is executed by a <strong>Pololu 12V DC Motor &amp; Lead-Screw assembly</strong>. The microcontroller governs this actuator using PWM and direction signals routed through a <strong>Cytron MD13S Bidirectional H-Bridge</strong> motor driver.</li>
+<li><strong>Team &amp; Node Connections:</strong> Inter-node communication and system-wide telemetry are facilitated through a centralized multi-pin connector. This links the Grip Actuation Node directly to the rest of the team's decentralized network (Master, Tactile, Proximity, and Slip nodes) over shared digital and analog lines.</li>
 </ul>
 <hr>
 <h3 id="system-block-diagram">System Block Diagram</h3>
 <blockquote>
-<p>⚠️ <strong>Note:</strong> Update your local repository or rename the file if it does not display properly due to the bracket spacing characters in the URL string below.</p>
+<p><strong>Note:</strong> Update your local repository or rename the file if it does not display properly due to the bracket spacing characters in the URL string below.</p>
 </blockquote>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./grip_node_block_diagram%20\(1\).png" data-desc-position="bottom"><img alt="Grip Actuation Node Block Diagram" src="./grip_node_block_diagram%20\(1\).png"></a></p>
 <h3 id="core-component-breakdown">Core Component Breakdown</h3>
