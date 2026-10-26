@@ -14,7 +14,6 @@ The purpose of this block diagram is to map out the hardware architecture, signa
 
 ### System Block Diagram
 
->  **Note:** Update your local repository or rename the file if it does not display properly due to the bracket spacing characters in the URL string below.
 
 ![Grip Actuation Node Block Diagram](./grip_node_block_diagram%20\(1\).png)
 
