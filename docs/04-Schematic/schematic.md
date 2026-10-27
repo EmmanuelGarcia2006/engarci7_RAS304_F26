@@ -6,6 +6,7 @@ This schematic is designed to support the **Grip Actuation Node subsystem**.
 * **Controller:** Interfaces directly with the Microchip PIC18F57Q43 microcontroller via dedicated PWM, Direction, ADC, and Interrupt pins.
 
 ![Grip Actuation Node Schematic](./Schematic%20Design.png)
+
 *Figure 1: Showing the completed schematic layout for the Grip Actuation Node.*
 
 ## Resources
