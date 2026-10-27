@@ -11,4 +11,4 @@ This schematic is designed to support the **Grip Actuation Node subsystem**.
 
 ## Resources
 
-The schematic as a PDF download is available [here](./Grip_Actuation_Node.pdf), and the Zip folder of the project [here](../../project_folder.zip).
+The schematic as a PDF download is available [here](./Grip_Actuation_Node.pdf).
