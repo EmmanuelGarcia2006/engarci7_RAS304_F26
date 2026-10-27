@@ -20,4 +20,4 @@ Before final implementation, the team must verify motor current requirements, dr
 
 The final design should include a reliable method for stopping the motor during an overload, detecting excessive travel, and entering a safe state during an emergency stop.
 
-*Note: All listed prices are estimates for comparison. Final component selection must be based on verified datasheets, exact model numbers, and the electrical and mechanical requirements of the assembled gripper.*
+
