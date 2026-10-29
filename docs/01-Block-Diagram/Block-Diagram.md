@@ -15,7 +15,7 @@ The purpose of this block diagram is to map out the hardware architecture, signa
 ### System Block Diagram
 
 
-![Grip Actuation Node Block Diagram](grip_node_block_diagram.png.png)
+![Grip Actuation Node Block Diagram](grip_node_block_diagram.png)
 
 ### Core Component Breakdown
 
