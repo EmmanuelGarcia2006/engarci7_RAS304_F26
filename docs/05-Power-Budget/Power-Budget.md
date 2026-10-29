@@ -36,4 +36,4 @@ The full system power parameters, safety margins, external battery source tolera
 
 $$\text{Worst-Case Lifespan Hours} = \frac{\text{Battery Nominal Capacity}}{\text{Total Continuous Draw}} = \frac{2200\text{ mAh}}{2262\text{ mA}} = \mathbf{0.972\text{ Hours (58.3 Minutes)}}$$
 
-*Note: Under standard lab operation, grip actuation cycles only persist for 2-3 seconds at a time. In real-world field settings, the node's true operation lifecycle will safely exceed 15+ hours.*
+* The complete verified spreadsheet calculation document is accessible as a PDF download [here](./Power-Budget_in.pdf).
