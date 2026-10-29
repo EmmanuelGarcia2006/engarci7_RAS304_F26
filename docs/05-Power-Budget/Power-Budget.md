@@ -14,9 +14,13 @@ A safety calculation overhead of **+25%** is added to all baseline subtotal calc
 
 ## Verified Power Budget Sheet
 
-The system power parameters, safety margins, external battery source tolerances, and worst-case continuous discharge lifespan metrics are fully mapped and verified below:
+The full system power parameters, safety margins, external battery source tolerances, and worst-case continuous discharge lifespan metrics are fully mapped and verified below:
 
-![Grip Actuation Node Power Budget Sheet](Power-Budget_in.pdf)
+### Page 1: Component Demands and Rail Assignments
+![Power Budget Page 1](Image1.png)
+
+### Page 2: External Supplies and Battery Lifespan Calculation
+![Power Budget Page 2](Image2.png)
 
 ---
 
