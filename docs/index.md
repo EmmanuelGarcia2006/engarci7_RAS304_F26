@@ -14,21 +14,30 @@ for<br>
 08/28/2026
 </center>
 
-## Introduction
 
-* This needs to be updated so that a reader gets an idea of the purpose of this datasheet.
+<section id="my-contribution" class="content-section">
+  <h2>My Contribution</h2>
+  <h3>Gripper Actuation</h3>
 
-### Project Summary
+  <p>
+    My primary responsibility in this project is the gripper
+    actuation system. This involves developing the embedded
+    control system responsible for opening and closing the
+    robotic gripper.
+  </p>
 
-* This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/EGR304TeamTemplate/)
+  <p>
+    My work focuses on controlling the actuator, implementing
+    the necessary control logic, and ensuring that the gripper
+    responds correctly to commands from the microcontroller.
+  </p>
 
-
-### My Contribution
-
-* This needs to be updated to reflect a team introduction
-* Content should also help an unfamiliar reader navigate to areas of interest. Information like:
-
-To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
-
-For all the sections
+  <p>
+    I am also responsible for understanding the actuator's
+    electrical interface, including signal connections, power
+    requirements, and integration with the embedded system.
+    The goal is to achieve reliable and consistent gripping
+    and releasing of objects as part of the overall robotic
+    system.
+  </p>
+</section>
