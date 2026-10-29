@@ -16,34 +16,54 @@ for<br>
 
 
 
+
+<!-- Introduction Section -->
 <section id="introduction" class="content-section">
   <h2>Introduction</h2>
 
   <p>
-    Our team is developing a robotic system that integrates
+    Our team is developing a robotic system that combines
     embedded hardware, electronic components, and software
-    to perform controlled mechanical movements. The project
-    focuses on combining these subsystems into a functional
-    system that can respond to commands and perform its
-    intended tasks.
+    to perform controlled operations. The project applies
+    embedded systems concepts to integrate the microcontroller,
+    actuators, and supporting electronics into one functional
+    system.
   </p>
 
   <p>
-    Through this project, we are applying concepts from
-    embedded systems, including microcontroller programming,
-    actuator control, electrical interfacing, and power
-    management. Each team member contributes to a different
-    part of the system to ensure that the hardware and
-    software work together effectively.
-  </p>
-
-  <p>
-    My individual responsibility is gripper actuation,
-    focusing on the control system that allows the robotic
-    gripper to open and close. This involves understanding
-    how the actuator interfaces with the microcontroller
-    and how control signals can produce reliable gripping
-    and releasing actions.
+    Throughout this project, we are applying concepts such as
+    microcontroller programming, actuator control, electrical
+    interfacing, and power management. Our goal is to ensure
+    that the different subsystems communicate and operate
+    together reliably to accomplish the robot's intended tasks.
   </p>
 </section>
 
+
+<!-- My Contribution Section -->
+<section id="my-contribution" class="content-section">
+  <h2>My Contribution</h2>
+  <h3>Gripper Actuation</h3>
+
+  <p>
+    My primary responsibility in this project is the gripper
+    actuation system. I focus on developing the control system
+    that allows the robotic gripper to open and close in
+    response to commands from the microcontroller.
+  </p>
+
+  <p>
+    My work involves understanding how the actuator interfaces
+    with the embedded system, including control signals,
+    electrical connections, and power requirements. I also
+    focus on implementing the control logic needed to operate
+    the gripper consistently.
+  </p>
+
+  <p>
+    The objective of my contribution is to achieve reliable
+    gripping and releasing of objects while ensuring that
+    the actuation system integrates properly with the rest
+    of the team's robotic system.
+  </p>
+</section>
