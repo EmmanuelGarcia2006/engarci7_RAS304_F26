@@ -1,23 +1,21 @@
-# Estimated Component Budget
+# 📋 Official Bill of Materials Document
 
-| Component | Estimated Cost |
-|---|---:|
-| [Cytron MD13S](https://cytron.io) | $15.30 |
-| [TLV9002 Op-Amp](https://ti.com) | $0.83 |
-| [Pololu 25D gearmotor](https://pololu.com) | $19.95 |
-| [L7805 / LM7805](https://digikey.com) | $0.62 |
-| **Estimated subtotal** | **$36.70** |
+Access the official document via the viewer or download link updated with the correct `BOM.pdf` casing.
 
-The subtotal excludes the lead screw, shaft coupler, mounting hardware, limit switches, shunt resistor, passive components, wiring, and power supply. Prices must be confirmed before purchasing.
+<p align="center">
+  <a href="BOM.pdf" target="_blank" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">📥 Download / View Full BOM PDF</a>
+</p>
 
 ---
 
-# Conclusion
+## 📄 Live PDF Viewer
+<iframe src="BOM.pdf" width="100%" height="800px" style="border: 2px solid #ccc; border-radius: 8px;">
+    <p>Your browser does not support embedded PDFs. Please download the PDF: <a href="BOM.pdf">Download BOM PDF</a></p>
+</iframe>
 
-Board 2 controls the gripper actuator, monitors motor load, and communicates operating status to the bus master. The proposed components prioritize cost, integration, and flexibility during prototyping.
+---
 
-Before final implementation, the team must verify motor current requirements, driver compatibility, overload response, regulator thermal performance, and microcontroller pin assignments. The assembled lead-screw mechanism must also be tested to ensure that it produces the required gripping force and travel safely.
+# Estimated Component Budget & Conclusion
 
-The final design should include a reliable method for stopping the motor during an overload, detecting excessive travel, and entering a safe state during an emergency stop.
-
+For component pricing details, please refer to the respective suppliers. Board 2 controls the gripper actuator, monitors motor load, and communicates operating status to the bus master. Verify component ratings and safety protocols prior to final implementation.
 
