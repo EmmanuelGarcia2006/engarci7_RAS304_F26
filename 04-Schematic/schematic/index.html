@@ -733,6 +733,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#design-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -915,6 +926,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#design-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1001,15 +1023,20 @@
   <h1>Schematic</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This schematic is designed to support the <strong>Grip Actuation Node subsystem</strong>. 
-* <strong>Functionality:</strong> Provides automatic bidirectional motor drive control alongside a dual-stage hardware overcurrent/overload safety monitoring loop.
-* <strong>Power:</strong> Utilizes an onboard LM7805 linear voltage regulator to step down the incoming +12V motor supply into a stable +5V digital logic rail.
-* <strong>Controller:</strong> Interfaces directly with the Microchip PIC18F57Q43 microcontroller via dedicated PWM, Direction, ADC, and Interrupt pins.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Schematic%20Design.png" data-desc-position="bottom"><img alt="Grip Actuation Node Schematic" src="../Schematic%20Design.png"></a></p>
-<p><em>Figure 1: Showing the completed schematic layout for the Grip Actuation Node.</em></p>
+<p>This printed circuit board (PCB) implements the physical two-layer layout for the <strong>Grip Actuation Node subsystem</strong>.
+* <strong>Board Architecture:</strong> Two-layer (<code>F.Cu</code> and <code>B.Cu</code>) through-hole and surface-mount mixed design built around the 56-pin Microchip PIC18F57Q43 Curiosity Nano footprint (<code>U1</code>) and L298HN H-bridge motor driver (<code>U5</code>).
+* <strong>Layout &amp; Isolation:</strong> Separates high-current +12V motor drive traces and flyback protection diodes (<code>D2</code>–<code>D5</code>) on the right edge from low-noise analog overcurrent sensing (<code>U3</code>) and +5V logic regulation (<code>U4</code>) on the left.
+* <strong>Verification:</strong> Passed KiCad Design Rules Check (DRC) with zero errors and zero unconnected nets, and verified for manufacturability via JLCDFM analysis.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB_Grip_Actuation_Node.pdf" data-desc-position="bottom"><img alt="Grip Actuation Node PCB Layout" src="../PCB_Grip_Actuation_Node.pdf"></a></p>
+<p><em>Figure 1: Completed two-layer PCB layout for the Grip Actuation Node.</em></p>
+<h2 id="design-verification">Design Verification</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Garcia_Emmanuel_DRC.png.png" data-desc-position="bottom"><img alt="KiCad DRC Verification" src="../Garcia_Emmanuel_DRC.png.png"></a></p>
+<p><em>Figure 2: KiCad Design Rules Checker (DRC) report confirming zero errors and zero unconnected items.</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Garcia_Emmanuel_DFM.png.png" data-desc-position="bottom"><img alt="JLCDFM Manufacturability Report" src="../Garcia_Emmanuel_DFM.png.png"></a></p>
+<p><em>Figure 3: JLCDFM board preview and Design for Manufacturability (DFM) verification report.</em></p>
 <h2 id="resources">Resources</h2>
-<p>The schematic as a PDF download is available <a href="./Grip_Actuation_Node.pdf">here</a>.
-The complete KiCad project workspace source files are available as a ZIP archive <a href="../Grip_Actuation_Node_Schematic_Layout.zip">here</a>.</p>
+<p>The PCB layout as a PDF download is available <a href="../PCB_Grip_Actuation_Node.pdf">here</a>.
+The fabrication Gerber and Drill files are available as a ZIP archive <a href="./Garcia_Emmanuel_Team104.zip">here</a>.</p>
 
 
 
