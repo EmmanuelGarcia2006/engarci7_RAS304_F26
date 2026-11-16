@@ -12,4 +12,4 @@ This schematic is designed to support the **Grip Actuation Node subsystem**.
 ## Resources
 
 The schematic as a PDF download is available [here](./NEW_Grip_Actuation_Node.pdf).
-The complete KiCad project workspace source files are available as a ZIP archive [here](./Grip_Actuation_Node_Schematic_Layout.zip).
+The complete KiCad project workspace source files are available as a ZIP archive [here](./Grip_Actuation_node_newlayout.zip).
