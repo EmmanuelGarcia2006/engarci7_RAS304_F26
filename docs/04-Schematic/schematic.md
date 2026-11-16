@@ -5,7 +5,7 @@ This schematic is designed to support the **Grip Actuation Node subsystem**.
 * **Power:** Utilizes an onboard LM7805 linear voltage regulator to step down the incoming +12V motor supply into a stable +5V digital logic rail.
 * **Controller:** Interfaces directly with the Microchip PIC18F57Q43 microcontroller via dedicated PWM, Direction, ADC, and Interrupt pins.
 
-![Grip Actuation Node Schematic](docs/04-Schematic/new_schematic.png)
+![Grip Actuation Node Schematic](/new_schematic.png)
 
 *Figure 1: Showing the completed schematic layout for the Grip Actuation Node.*
 
